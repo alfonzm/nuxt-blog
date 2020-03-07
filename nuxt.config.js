@@ -1,5 +1,4 @@
 import hljs from 'highlight.js'
-import md from 'markdown-it'
 
 export default {
   mode: 'universal',
@@ -28,6 +27,7 @@ export default {
   ** Global CSS
   */
   css: [
+    { src: 'highlight.js/styles/agate.css', lang: 'css' },
   ],
   /*
   ** Plugins to load before mounting the App
@@ -95,5 +95,8 @@ export default {
         return `/blog/${filename}`
       })
     },
+  },
+  purgeCSS: {
+    whitelistPatterns: [/^hljs/],
   },
 }
